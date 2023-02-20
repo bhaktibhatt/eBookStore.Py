@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Educational Books</h2>
+    <div style="width: 100%;display: flex; align-items: center;justify-content: space-evenly;">
+        {% for E in eBooks %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ E.cover_url }}" class="card-img-top" alt="Book Cover">
+            <div class="card-body">
+                <h5 class="card-title">{{ E.title }}</h5>
+                <p class="card-text">${{ E.price }}</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
