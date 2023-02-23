@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
+<ul class="list-group">
+  {% for item in cart_items %}
+    <li class="list-group-item">{{ item.title }}
+      <div class="float-end">
+        <button class="btn btn-sm btn-primary" type="submit">Place Order</button>
+        <form action="del_cart_item" method="post"></form>
+        <button type="submit" class="btn btn-sm btn-secondary">Remove</button>
+      </div>
+    </li>
+  {% endfor %}
+  <li class="d-flex justify-content-between list-group-item">Cart Sub Total ${{ cart_total }}
+    <button class="btn btn-sm btn-primary" type="submit">Purchase all</button>
+    
+  </li>
+  </ul>
+{% endblock %}

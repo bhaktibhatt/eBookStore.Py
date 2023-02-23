@@ -8,3 +8,7 @@ class Ebook(models.Model):
 
     def __str__(self):
         return self.title
+
+class CartItems(models.Model):
+    title = models.CharField(max_length=50, null=True)
+    price = models.FloatField(null=True)
